@@ -11,7 +11,9 @@ function AddTodo(props) {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        props.onTodoAdd(titleText);
+        if (titleText !== '') {
+            props.onTodoAdd(titleText);
+        }
         resetText();
     };
 
