@@ -14,7 +14,6 @@ function App() {
       <Paper style={paperStyle} elevation={4}>
         <Typography variant="h4" >Simple Todo List</Typography>
         <Todo />
-
       </Paper>
     </Grid>
   );
