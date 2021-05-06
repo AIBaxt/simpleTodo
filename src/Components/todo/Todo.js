@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AddTodo from './AddTodo';
 import ListTodo from './ListTodo';
 
+//A dummy list of TODOs 
 const DUMMY_TODOS = [
     {
         id: 't1',
@@ -22,7 +23,7 @@ const DUMMY_TODOS = [
 const Todo = (props) => {
 
     const [todos, setTodos] = useState([]);
-
+    //todoAddHandler is triggered in AddTodo whenever the user enters a title and hits the "Add Todo" button. todoAddHandler then adds the new title to the todos array using state
     const todoAddHandler = (enteredTodoData) => {
         const todoData = {
             id: Math.random().toString(),
@@ -33,7 +34,8 @@ const Todo = (props) => {
             return [todoData, ...todos];
         });
     };
-
+    //todoDeleteHandler creates a new array by filtering out the object with the specified id and then calls setTodo to update the todos array.
+    //Deleting is triggered in ListTodo whenever a user clicks on a todo.
     const todoDeleteHandler = (data) => {
         var newArray = todos.filter(x => { return x.id !== data; })
         setTodos(newArray);
