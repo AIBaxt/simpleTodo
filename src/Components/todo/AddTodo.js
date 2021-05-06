@@ -5,14 +5,15 @@ function AddTodo(props) {
 
     const [titleText, setTitleText] = useState('');
 
-    const submitHandler = (event) => {
-        event.preventDefault();
-        resetText();
-    };
-
     const onChangeHandler = (event) => {
         setTitleText(event.target.value);
     }
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+        props.onTodoAdd(titleText);
+        resetText();
+    };
 
     function resetText() {
         setTitleText('');
@@ -20,6 +21,7 @@ function AddTodo(props) {
 
     const textStyle = { width: "93%", padding: 0 }
     const buttonStyle = { margin: "10px 0 0 0", padding: "10px 40px 10px 40px" };
+
     return (
         <div>
             <form onSubmit={submitHandler}>
