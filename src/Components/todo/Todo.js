@@ -32,15 +32,16 @@ const Todo = (props) => {
         setTodos((prevTodos) => {
             return [todoData, ...todos];
         });
-
-        console.log(todos);
     };
 
-
+    const todoDeleteHandler = (data) => {
+        var newArray = todos.filter(x => { return x.id !== data; })
+        setTodos(newArray);
+    };
 
     return (
         <div>
-            { todos.map(todo => <ListTodo key={todo.id} title={todo.title} />)}
+            { todos.map(todo => <ListTodo key={todo.id} id={todo.id} title={todo.title} onTodoDelete={todoDeleteHandler} />)}
             < AddTodo onTodoAdd={todoAddHandler} />
         </div >
     );
