@@ -11,7 +11,7 @@ function App() {
 
   return (
     <Grid container justify="center">
-      <Paper style={paperStyle} elevation={7}>
+      <Paper style={paperStyle} elevation={4}>
         <Typography variant="h4" >Simple Todo List</Typography>
         <Todo />
 
