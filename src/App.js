@@ -1,25 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import '@fontsource/roboto';
+import { Container, Grid, Paper, Typography } from '@material-ui/core';
+import Header from './Components/UI/Header';
+import Todo from './Components/todo/Todo';
+
 
 function App() {
+  const paperStyle = { padding: 15, width: 500, margin: "20px auto" };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid container justify="center">
+      <Paper style={paperStyle} elevation={7}>
+        <Typography variant="h4" >Simple Todo List</Typography>
+        <Todo />
+
+      </Paper>
+    </Grid>
   );
 }
 
 export default App;
+
